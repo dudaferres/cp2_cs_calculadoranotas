@@ -166,4 +166,49 @@ class Program
             return nota; // return encerra o método e o laço ao mesmo tempo
         }
     }
+
+    static void CalcularMedia()
+    {
+        Console.WriteLine("\n--- Calcular média ---");
+
+        // early returns reduzem o aninhamento
+        if (string.IsNullOrEmpty(nomeAluno))
+        {
+            Console.WriteLine("Cadastre um aluno primeiro (opção 1).");
+            return;
+        }
+
+        if (!notasLancadas)
+        {
+            Console.WriteLine("Lance as notas primeiro (opção 2).");
+            return;
+        }
+
+        double soma = 0;
+        foreach (double nota in notas)
+        {
+            soma += nota;
+        }
+
+        double media = soma / QUANTIDADE_NOTAS;
+
+        Console.WriteLine($"Aluno: {nomeAluno}");
+        Console.WriteLine($"Notas: {string.Join(" / ", notas)}");
+        Console.WriteLine($"Média: {media:F2}");
+
+        ExibirSituacao(media);
+    }
+
+    static void ExibirSituacao(double media)
+    {
+        Console.WriteLine($"Situação: {ClassificarMedia(media)}");
+    }
+
+    static string ClassificarMedia(double media)
+    {
+        if (media >= MEDIA_APROVACAO) return "Aprovado";
+        if (media >= MEDIA_RECUPERACAO) return "Recuperação";
+        return "Reprovado";
+    }
+
 }

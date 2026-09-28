@@ -1,0 +1,79 @@
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# NuGet
+*.nupkg
+packages/
+# The packages folder can be ignored because of PackageReference
+project.lock.json
+project.assets.json
+
+# Resharper
+_ReSharper*/
+*.ReSharper
+
+# Rider
+.idea/
+
+# DotCover
+.dotCover
+
+# Test results
+TestResults/
+*.trx
+
+# Publish folder
+publish/
+*.Publish.xml
+
+# User-specific files
+*.dbmdl
+*.bak
+*.backup
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework
+*.edmx.diagram
+
+# Dotnet local tools
+.dotnet/tools/
+
+# Visual Studio Code workspace settings
+.vscode/*
+!/.vscode/extensions.json
+
+# Logs
+*.log
+
+# Coverage
+.coverage
+.coveragexml
+coverage/
+
+# Local env files
+.env
+appsettings.Development.json
+
+# Rider and other IDE caches
+.idea/
+/.idea/*
+
+# Ignore user secrets file if present
+secrets.json
+
+# Mac files
+.DS_Store

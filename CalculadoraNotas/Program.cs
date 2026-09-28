@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 class Program
 {
@@ -115,6 +116,54 @@ class Program
             nomeAluno = entrada.Trim();
             Console.WriteLine($"Aluno \"{nomeAluno}\" cadastrado com sucesso!");
             break; // condição de saída garantida: evita loop infinito
+        }
+    }
+
+    static void LancarNotas()
+    {
+        Console.WriteLine("\n--- Lançar notas ---");
+
+        if (string.IsNullOrEmpty(nomeAluno))
+        {
+            Console.WriteLine("Cadastre um aluno antes de lançar as notas (opção 1).");
+            return; // early return
+        }
+
+        Console.WriteLine($"Aluno: {nomeAluno}");
+        Console.WriteLine($"Informe {QUANTIDADE_NOTAS} notas entre {NOTA_MINIMA} e {NOTA_MAXIMA}.");
+
+        for (int indice = 0; indice < QUANTIDADE_NOTAS; indice++)
+        {
+            notas[indice] = LerNota(indice + 1);
+        }
+
+        notasLancadas = true;
+        Console.WriteLine("\nNotas lançadas com sucesso!");
+    }
+
+    static double LerNota(int numeroNota)
+    {
+        while (true)
+        {
+            Console.Write($"Nota {numeroNota}: ");
+            string entrada = Console.ReadLine();
+
+            // aceita "8,5" e "8.5" independentemente da configuração regional
+            entrada = entrada?.Replace(',', '.');
+
+            if (!double.TryParse(entrada, NumberStyles.Float, CultureInfo.InvariantCulture, out double nota))
+            {
+                Console.WriteLine("Entrada inválida! Digite apenas números (ex: 7 ou 8,5).");
+                continue; // pula o restante e pede de novo
+            }
+
+            if (nota < NOTA_MINIMA || nota > NOTA_MAXIMA)
+            {
+                Console.WriteLine($"Nota fora do intervalo! Digite um valor entre {NOTA_MINIMA} e {NOTA_MAXIMA}.");
+                continue;
+            }
+
+            return nota; // return encerra o método e o laço ao mesmo tempo
         }
     }
 }

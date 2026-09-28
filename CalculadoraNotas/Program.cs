@@ -96,4 +96,25 @@ class Program
     {
         Console.WriteLine("\n(Cálculo de média em desenvolvimento)");
     }
+
+    static void CadastrarAluno()
+    {
+        Console.WriteLine("\n--- Cadastrar aluno ---");
+
+        while (true) // sai pelo break quando o nome for válido
+        {
+            Console.Write("Digite o nome do aluno: ");
+            string entrada = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(entrada))
+            {
+                Console.WriteLine("Nome inválido! O nome não pode ficar vazio.");
+                continue; // volta a pedir o nome
+            }
+
+            nomeAluno = entrada.Trim();
+            Console.WriteLine($"Aluno \"{nomeAluno}\" cadastrado com sucesso!");
+            break; // condição de saída garantida: evita loop infinito
+        }
+    }
 }

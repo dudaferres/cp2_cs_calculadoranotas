@@ -1,0 +1,5 @@
+C:\Users\labsfiap\Documents\GitHub\cp2_cs_calculadoranotas1\CalculadoraNotas\obj\Debug\net10.0\CalculadoraNotas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\labsfiap\Documents\GitHub\cp2_cs_calculadoranotas1\CalculadoraNotas\obj\Debug\net10.0\CalculadoraNotas.AssemblyInfoInputs.cache
+C:\Users\labsfiap\Documents\GitHub\cp2_cs_calculadoranotas1\CalculadoraNotas\obj\Debug\net10.0\CalculadoraNotas.AssemblyInfo.cs
+C:\Users\labsfiap\Documents\GitHub\cp2_cs_calculadoranotas1\CalculadoraNotas\obj\Debug\net10.0\CalculadoraNotas.csproj.CoreCompileInputs.cache
+C:\Users\labsfiap\Documents\GitHub\cp2_cs_calculadoranotas1\CalculadoraNotas\obj\Debug\net10.0\CalculadoraNotas.sourcelink.json
